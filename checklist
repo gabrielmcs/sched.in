@@ -1,0 +1,20 @@
+<!--**
+ * @Autor: Gabriel Soares -  gabriel@sched.in
+ * @Checklist para maquinas de chão de fabrica.
+ *-->
+<?php
+//Abre session
+session_start();
+
+//Conexao com Banco de Dados
+include_once("conexao.php");
+
+//Verificar se está sendo passado na URL a página atual, senao é atribuido a pagina 
+$pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+
+//Selecionar todos os passos da tabela
+$result_checklist = "SELECT * FROM cadChecklist";
+$resultado_checklist = mysqli_query($conn, $result_checklist);
+?>
+
+
